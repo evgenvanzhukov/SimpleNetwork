@@ -13,6 +13,8 @@
 		67AB0306290AF17F008830D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AB0304290AF17F008830D6 /* Main.storyboard */; };
 		67AB0308290AF181008830D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AB0307290AF181008830D6 /* Assets.xcassets */; };
 		67AB030B290AF181008830D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AB0309290AF181008830D6 /* LaunchScreen.storyboard */; };
+		67AB0313290AF26D008830D6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AB0312290AF26D008830D6 /* NetworkManager.swift */; };
+		67AB0315290AF294008830D6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AB0314290AF294008830D6 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		67AB0307290AF181008830D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AB030A290AF181008830D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67AB030C290AF181008830D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67AB0312290AF26D008830D6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		67AB0314290AF294008830D6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				67AB0307290AF181008830D6 /* Assets.xcassets */,
 				67AB0309290AF181008830D6 /* LaunchScreen.storyboard */,
 				67AB030C290AF181008830D6 /* Info.plist */,
+				67AB0312290AF26D008830D6 /* NetworkManager.swift */,
+				67AB0314290AF294008830D6 /* UserModel.swift */,
 			);
 			path = SimpleNetwork;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67AB0313290AF26D008830D6 /* NetworkManager.swift in Sources */,
 				67AB0303290AF17F008830D6 /* ViewController.swift in Sources */,
 				67AB02FF290AF17F008830D6 /* AppDelegate.swift in Sources */,
+				67AB0315290AF294008830D6 /* UserModel.swift in Sources */,
 				67AB0301290AF17F008830D6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +301,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Zhu.SimpleNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Zhu.SimpleNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

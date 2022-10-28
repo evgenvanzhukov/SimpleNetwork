@@ -1,20 +1,45 @@
-//
-//  ViewController.swift
-//  SimpleNetwork
-//
-//  Created by Evgen on 27/10/2022.
-//  Copyright © 2022 Evgen. All rights reserved.
-//
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
+    
+    var dataSource = [User]()
+    
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var netManager = NetworkManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
+        
+        netManager.getUsers { (result) in
+            switch result {
+
+            case .success(let users):
+                DispatchQueue.main.async {
+                    self.dataSource = users
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("error \(error.localizedDescription)")
+            }
+
+        }
     }
 
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let user = dataSource[indexPath.row]
+        cell.textLabel?.text = "\(user.userId). \(user.name)"
+        cell.detailTextLabel?.text = "\(user.address.city) \(user.address.street)"
+        return cell
+    }
 }
 
